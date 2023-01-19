@@ -16,6 +16,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@mdi/font": "^7.1.96",
     "vuetify": "^3.1.0"
   }
 }
