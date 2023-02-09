@@ -2,7 +2,7 @@
   <v-app>
     <v-layout>
       <v-app-bar :height=convertRemToPixels(6)>
-        <div class="d-flex justify-center fill-height" id="test1" style="position:relative;width:100%">
+        <div class="d-flex justify-center fill-height" style="position:relative;width:100%">
           <div class="appbar-text link-select" :class="themeClass" id="name" :style="selectStyle">
             Noah's
             <div class="select-border" :class="themeClass" :style="borderStyle"></div>
@@ -14,8 +14,19 @@
         <v-btn :icon="darkMode ? 'mdi-white-balance-sunny' : 'mdi-weather-night'" color="grey" variant="outlined" style="position:fixed;right:0.5em" @click="toggleTheme">
         </v-btn>
       </v-app-bar>
-      <v-main>
-        <Content />
+      <v-main class="main-window" :class="themeClass">
+        <div style="padding: 32px 32px 0; min-height: 100%; display: flex;">
+          <div style="min-height: 100%; display:flex; max-width: 1104px;  width:100%; margin: 0 auto;">
+            <Profile v-if="path === 'profile'"></Profile>
+            <Blog v-if="path === 'blog'"></Blog>
+            <Education v-if="path === 'education'"></Education>
+            <Experience v-if="path === 'experience'"></Experience>
+
+            <!-- <div style="padding: 0 32px">
+              <Content />
+            </div> -->
+          </div>
+        </div>
       </v-main>
     </v-layout>
   </v-app>
@@ -25,8 +36,13 @@
 import { useRoute, useRouter } from 'vitepress'
 import { useTheme } from 'vuetify'
 import '@mdi/font/css/materialdesignicons.css'
+import Profile from './pages/Profile.vue'
+import Blog from './pages/Blog.vue'
+import Education from './pages/Education.vue'
+import Experience from './pages/Experience.vue'
 
 export default {
+  components: {Profile, Blog, Education, Experience},
   data() {
     return {
       animate: false,
@@ -37,8 +53,8 @@ export default {
       routes: {
         profile: 'Profile',
         blog: 'Blog',
-        projects: 'Projects',
-        resume: 'Resume'
+        education: 'Education',
+        experience: 'Experience'
       }
     }
   },
@@ -90,7 +106,7 @@ export default {
       return style
     },
     path() {
-      return this.route.path
+      return this.route.path.split('/')[1].split('.')[0]
     },
     darkMode() {
       return this.theme.global.current.value.dark
@@ -109,8 +125,7 @@ export default {
     setSelectionPosition(animate) {
       
       this.nameWidth = document.getElementById('name').offsetWidth
-      let path = this.route.path.split('/')[1].split('.')[0]
-      let index = Object.keys(this.routes).findIndex(k => k == path)
+      let index = Object.keys(this.routes).findIndex(k => k == this.path)
 
       if (index < 0) {
         this.router.go('/profile.html')
@@ -142,7 +157,6 @@ export default {
       this.setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
     } else {
       this.setTheme(localStorage.getItem('user-theme'))
-
     }
 
     document.fonts.ready.then(() => this.setInitialSelection())
@@ -217,5 +231,9 @@ export default {
     text-transform: none !important;
     line-height:1!important;
     padding-bottom: 0.25rem;
+  }
+
+  .main-window.light-theme {
+    background-color: whitesmoke;
   }
 </style>
