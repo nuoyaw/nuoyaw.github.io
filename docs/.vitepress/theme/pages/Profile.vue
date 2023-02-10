@@ -2,15 +2,15 @@
   <v-container style="height: 100%; max-width: 600px; max-height:800px; margin: 0 auto;">
     <v-row style="height: 100%" align="center">
       <v-col>
-        <v-row justify="center">
-          <v-avatar size="160" color="grey" >temp</v-avatar>
+        <v-row justify="center" class="mb-16">
+          <v-avatar size="160" color="grey">
+            <v-img src="../../../images/me.jpeg"></v-img>
+          </v-avatar>
         </v-row>
-        <v-row justify="center" >
-          <div class="my-16">
-            I am a machine learning engineer
-          </div>
+        <v-row v-for="para in bio" justify="center" class="my-8">
+          <div>{{ para }}</div>
         </v-row>
-        <v-row justify="center">
+        <v-row justify="center" class="mt-16">
           <a v-for="link in links" :href="link.url">
             <v-icon :icon="link.icon" class="profile-link mx-7" :class="themeClass" size="x-large"></v-icon>
           </a>
@@ -39,6 +39,11 @@ export default {
         { url: 'https://www.linkedin.com/in/nuoyaw/', icon: 'mdi-linkedin' },
         { url: 'https://twitter.com/noahs_ai', icon: 'mdi-twitter'},
         { url: 'https://github.com/nuoyaw', icon: 'mdi-github'}
+      ],
+
+      bio: [
+        "I'm a Machine Learning Engineer with a strong belief in the potential that AI can unlock for humanity. I enjoy applying state-of-the-art to create solutions for real-world problems. My 5+ years of experience as a software engineer make me a great jack-of-all-trades. I'm equally adept whether it comes to optimising C++ code for deployment, or conducting groundbreaking research in an unexplored domain.",
+        "Outside of my career, I'm also a maker, a tinkerer, and a lover of all things tech. My hobbies include art, computers, cars, and motorsports. I have a great DIY spirit, and am constantly seeking to learn new things and improve myself."
       ]
     }
   },
