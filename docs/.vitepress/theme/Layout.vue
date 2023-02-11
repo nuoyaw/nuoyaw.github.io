@@ -159,6 +159,8 @@ export default {
       this.setTheme(localStorage.getItem('user-theme'))
     }
 
+    console.log(this)
+
     document.fonts.ready.then(() => this.setInitialSelection())
   },
 }
@@ -168,11 +170,6 @@ export default {
   @font-face {
     font-family: "Oswald";
     src: local("Oswald"), url(./fonts/Oswald/static/Oswald-Regular.ttf) format("truetype");
-  }
-
-  @font-face {
-    font-family: "Edingu";
-    src: local("Edingu"), url(./fonts/Edingu/Ed.ttf) format("truetype");
   }
 
   .select-border {

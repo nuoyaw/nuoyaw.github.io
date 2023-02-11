@@ -3,7 +3,7 @@
     <v-row style="height: 100%" align="center">
       <v-col>
         <v-row justify="center" class="mb-16">
-          <v-avatar size="160" color="grey">
+          <v-avatar size="160">
             <v-img src="../../../images/me.jpeg"></v-img>
           </v-avatar>
         </v-row>
@@ -42,8 +42,8 @@ export default {
       ],
 
       bio: [
-        "I'm a Machine Learning Engineer with a strong belief in the potential that AI can unlock for humanity. I enjoy applying state-of-the-art to create solutions for real-world problems. My 5+ years of experience as a software engineer make me a great jack-of-all-trades. I'm equally adept whether it comes to optimising C++ code for deployment, or conducting groundbreaking research in an unexplored domain.",
-        "Outside of my career, I'm also a maker, a tinkerer, and a lover of all things tech. My hobbies include art, computers, cars, and motorsports. I have a great DIY spirit, and am constantly seeking to learn new things and improve myself."
+        "I'm a Machine Learning Engineer with a strong belief in the potential that AI can unlock for humanity. I enjoy applying state-of-the-art to create solutions for real-world problems. My 5+ years of experience as a Software Engineer make me a great jack-of-all-trades. I'm equally adept whether it comes to optimising C++ code for deployment, or conducting groundbreaking research in an unexplored domain.",
+        "Outside of my career, I'm also a maker, a tinkerer, and a lover of all things tech. My interests include art, computers, cars, and motorsports. I have a great DIY spirit, and am constantly seeking to learn new things and improve myself."
       ]
     }
   },
