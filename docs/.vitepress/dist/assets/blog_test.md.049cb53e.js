@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as s,a as o}from"./app.312fa171.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"blog/test.md"}'),a={name:"blog/test.md"},n=o("p",null,"test",-1),r=[n];function c(_,d,l,p,i,m){return s(),e("div",null,r)}const h=t(a,[["render",c]]);export{u as __pageData,h as default};

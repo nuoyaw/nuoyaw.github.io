@@ -4,7 +4,7 @@
       <v-col>
         <v-row justify="center" class="mb-16">
           <v-avatar size="160">
-            <v-img src="../../../images/me.jpeg"></v-img>
+            <v-img src="/me.jpeg"></v-img>
           </v-avatar>
         </v-row>
         <v-row v-for="para in bio" justify="center" class="my-8">
