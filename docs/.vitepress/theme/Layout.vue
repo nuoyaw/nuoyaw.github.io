@@ -21,10 +21,6 @@
             <Blog v-if="path === 'blog'"></Blog>
             <Education v-if="path === 'education'"></Education>
             <Experience v-if="path === 'experience'"></Experience>
-
-            <!-- <div style="padding: 0 32px">
-              <Content />
-            </div> -->
           </div>
         </div>
       </v-main>
@@ -158,8 +154,6 @@ export default {
     } else {
       this.setTheme(localStorage.getItem('user-theme'))
     }
-
-    console.log(this)
 
     document.fonts.ready.then(() => this.setInitialSelection())
   },

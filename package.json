@@ -11,12 +11,17 @@
     "vue": "^3.2.45"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "docs:dev": "concurrently \"nodemon --watch docs/blog -e md index_blog.mjs\" \"vitepress dev docs\"",
+    "docs:build": "node index_blog.mjs && vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@mdi/font": "^7.1.96",
+    "concurrently": "^7.6.0",
+    "gray-matter": "^4.0.3",
+    "node-fs": "^0.1.7",
+    "nodemon": "^2.0.20",
+    "remove-markdown": "^0.5.0",
     "vuetify": "^3.1.0"
   }
 }

@@ -1,29 +1,29 @@
 {
-  "hash": "50e65c8f",
-  "browserHash": "a1434018",
+  "hash": "52bb4e48",
+  "browserHash": "a1a480ae",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "dddbeeec",
+      "fileHash": "affd4764",
       "needsInterop": false
     },
     "vuetify": {
       "src": "../../../../node_modules/vuetify/lib/framework.mjs",
       "file": "vuetify.js",
-      "fileHash": "df677e89",
+      "fileHash": "00a44005",
       "needsInterop": false
     },
     "vuetify/components": {
       "src": "../../../../node_modules/vuetify/lib/components/index.mjs",
       "file": "vuetify_components.js",
-      "fileHash": "26600aeb",
+      "fileHash": "29bbcc0c",
       "needsInterop": false
     },
     "vuetify/directives": {
       "src": "../../../../node_modules/vuetify/lib/directives/index.mjs",
       "file": "vuetify_directives.js",
-      "fileHash": "eb8df0c7",
+      "fileHash": "689f006e",
       "needsInterop": false
     }
   },
