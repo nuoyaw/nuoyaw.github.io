@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises'
 import matter from 'gray-matter'
-import removeMd from 'remove-markdown'
 
 const articles = await fs.readdir('./docs/blog/')
 
