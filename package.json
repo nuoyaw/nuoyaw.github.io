@@ -1,28 +1,27 @@
 {
   "name": "nuoyaw.github.io",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": "git@github.com:nuoyaw/nuoyaw.github.io.git",
+  "author": "Nuoya Wang <u6771430@anu.edu.au>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.36",
+    "vue": "^3.2.45"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "docs:dev": "concurrently \"nodemon --watch docs/blog -e md index_blog.mjs\" \"vitepress dev docs\"",
+    "docs:build": "node index_blog.mjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@mdi/font": "7.0.96",
-    "core-js": "^3.8.3",
-    "roboto-fontface": "*",
-    "vue": "^3.2.13",
-    "vue-router": "^4.0.0",
-    "vuetify": "^3.0.0",
-    "webfontloader": "^1.0.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
-    "eslint": "^8.22.0",
-    "eslint-plugin-vue": "^9.3.0",
-    "sass": "^1.55.0",
-    "vite": "^3.1.9",
-    "vite-plugin-vuetify": "^1.0.0-alpha.12"
+    "@mdi/font": "^7.1.96",
+    "concurrently": "^7.6.0",
+    "gray-matter": "^4.0.3",
+    "node-fs": "^0.1.7",
+    "nodemon": "^2.0.20",
+    "remove-markdown": "^0.5.0",
+    "vuetify": "^3.1.0"
   }
 }
