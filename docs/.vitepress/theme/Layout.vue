@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-layout>
-      <v-app-bar :height=convertRemToPixels(6)>
+      <v-app-bar :height="convertRemToPixels(isMobile ? 5 : 6)">
         <div class="d-flex justify-center fill-height" style="position:relative;width:100%">
           <div class="appbar-text link-select" :class="themeClass" id="name" :style="selectStyle">
             Noah's
@@ -11,7 +11,7 @@
             <a class="appbar-text link-option" :class="themeClass" :id="i" :href="'/'+k+'.html'" @click="changePath(k, $event)">{{ v }}</a> 
           </span>
         </div>
-        <v-btn :icon="darkMode ? 'mdi-white-balance-sunny' : 'mdi-weather-night'" color="grey" variant="outlined" style="position:fixed;right:0.5em" @click="toggleTheme">
+        <v-btn v-if="!isMobile" :icon="darkMode ? 'mdi-white-balance-sunny' : 'mdi-weather-night'" color="grey" variant="outlined" style="position:fixed;right:0.5em" @click="toggleTheme">
         </v-btn>
       </v-app-bar>
       <v-main class="main-window" :class="themeClass">
@@ -24,6 +24,7 @@
           </div>
         </div>
       </v-main>
+      <v-btn v-if="isMobile" :icon="darkMode ? 'mdi-white-balance-sunny' : 'mdi-weather-night'" style="position:fixed;right:1em;bottom:1em" @click="toggleTheme" size="x-large"></v-btn>
     </v-layout>
   </v-app>
 </template>
@@ -80,8 +81,13 @@ export default {
     displayHeight() {
       return this.$vuetify.display.height
     },
+
     displayWidth() {
       return this.$vuetify.display.width
+    },
+
+    isMobile() {
+      return this.displayWidth < 810
     },
 
     selectStyle() {
@@ -94,6 +100,7 @@ export default {
       }
       return style
     },
+
     borderStyle() {
       let style = {width: this.borderWidth + 'px'}
       if (this.animate) {
@@ -101,14 +108,21 @@ export default {
       }
       return style
     },
+
     path() {
       return this.route.path.split('/')[1].split('.')[0]
     },
+
     darkMode() {
       return this.theme.global.current.value.dark
     },
+
     themeClass() {
-      return this.darkMode ? 'dark-theme' : 'light-theme'
+      return (this.darkMode ? 'dark-theme' : 'light-theme') + ' ' + (this.isMobile ? 'mobile-view' : 'desktop-view')
+    },
+
+    mobileClass() {
+      return 
     }
   },
   methods: {
@@ -169,13 +183,21 @@ export default {
   .select-border {
     border-style: solid;
     border-radius: 0.6rem;
-    border-width: 0.24rem !important;
     position: absolute;
     margin-top: -0.5rem;
-    height: 5.5rem;
     top:0;
     left: -0.75rem;
     z-index: -1;
+  }
+
+  .select-border.mobile-view {
+    height: 4.5rem;
+    border-width: 0.2rem !important;
+  }
+
+  .select-border.desktop-view {
+    height: 5.5rem;
+    border-width: 0.24rem !important;
   }
 
   .select-border.light-theme {
@@ -212,16 +234,22 @@ export default {
   }
 
   .appbar-text {
-    font-size: 2rem !important;
     display: inline-block;
-    font-weight: 400;
     text-decoration: none;
-    
+    font-weight: 400;
     letter-spacing: normal !important;
     font-family: "Oswald" !important;
     text-transform: none !important;
     line-height:1!important;
     padding-bottom: 0.25rem;
+  }
+
+  .appbar-text.desktop-view {
+    font-size: 2rem !important;
+  }
+
+  .appbar-text.mobile-view {
+    font-size: 1.5rem !important;
   }
 
   .main-window.light-theme {
