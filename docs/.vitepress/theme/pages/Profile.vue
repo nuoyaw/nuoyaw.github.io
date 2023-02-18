@@ -42,7 +42,7 @@ export default {
       ],
 
       bio: [
-        "Hi, I'm Nuoya (Noah) Wang. I'm a Machine Learning Engineer with a strong belief in the potential that AI can unlock for humanity. I enjoy applying state-of-the-art to create solutions for real-world problems. My 5+ years of experience as a Software Engineer make me a great jack-of-all-trades. I'm equally adept whether it comes to optimising C++ code for deployment, or conducting groundbreaking research in an unexplored domain.",
+        "Hi, I'm Nuoya (Noah) Wang. I'm a Machine Learning Engineer with a strong belief in the potential that AI can unlock for humanity. I enjoy applying state-of-the-art research to create solutions for real-world problems. My 5+ years of experience as a Software Engineer make me a great jack-of-all-trades. I'm equally adept whether it comes to optimising C++ code for deployment, or conducting groundbreaking research in an unexplored domain.",
         "Outside of my career, I'm also a maker, a tinkerer, and a lover of all things tech. My interests include art, computers, cars, and motorsports. I have a great DIY spirit, and am constantly seeking to learn new things and improve myself."
       ]
     }
