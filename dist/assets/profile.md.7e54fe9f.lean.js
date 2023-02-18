@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as r}from"./app.cd8df086.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"profile.md"}'),o={name:"profile.md"};function a(s,c,n,p,i,_){return r(),t("div")}const l=e(o,[["render",a]]);export{d as __pageData,l as default};
