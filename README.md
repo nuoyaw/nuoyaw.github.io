@@ -1,57 +1,18 @@
-# base
+# Noah's personal site
 
-## Project setup
+This is the code for my own personal site, but feel free to adapt it to yourself if you like the style. It's built in Vue, with Vuetify components. Vitepress is used to allow blogs to be written in markdown with frontmatter. Just add them to `docs/blog` with numeric file names (e.g. `1.md`). Note that these filenames will be sorted in descending order (i.e. larger numbers are more recent posts, and smaller numbers are older posts). 
 
-```
-# yarn
-yarn
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# yarn
+## Development
+```sh
 yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
 ```
 
-### Compiles and minifies for production
-
-```
-# yarn
+## Build
+```sh
 yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
 ```
 
-### Lints and fixes files
-
+## Preview build
+```sh
+yarn preview
 ```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
