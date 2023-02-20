@@ -1,7 +1,9 @@
 import fs from 'node:fs/promises'
 import matter from 'gray-matter'
 
-const articles = await fs.readdir('./docs/blog/')
+var articles = await fs.readdir('./docs/blog/')
+articles = articles.filter((a) => a.endsWith('.md'))
+articles.sort((a, b) => parseInt(b) - parseInt(a))
 
 const data = await Promise.all(
   articles.map(async (article) => {
