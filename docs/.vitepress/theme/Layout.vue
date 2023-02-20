@@ -18,7 +18,7 @@
         <div style="padding: 32px 32px 0; min-height: 100%; display: flex;">
           <div style="min-height: 100%; display:flex; max-width: 1104px;  width:100%; margin: 0 auto;">
             <Profile v-if="path === 'profile'"></Profile>
-            <Blog v-if="path === 'blog'"></Blog>
+            <Blog v-if="path === 'blog'" :is-mobile="isMobile"></Blog>
             <Education v-if="path === 'education'"></Education>
             <Experience v-if="path === 'experience'"></Experience>
           </div>
@@ -120,10 +120,6 @@ export default {
     themeClass() {
       return (this.darkMode ? 'dark-theme' : 'light-theme') + ' ' + (this.isMobile ? 'mobile-view' : 'desktop-view')
     },
-
-    mobileClass() {
-      return 
-    }
   },
   methods: {
     convertRemToPixels(rem) {    

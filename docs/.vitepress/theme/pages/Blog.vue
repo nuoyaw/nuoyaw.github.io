@@ -1,23 +1,21 @@
 <template>
-  <v-container v-if="isIndex">
-    <v-row v-for="entry in entries" class="mt-8">
-      <v-col class="text-h6 font-weight-light" cols=2><v-row align="center">{{ entry.date }}</v-row></v-col>
-      <v-col>
-        <v-row class="text-h5 font-weight-bold">
-          <a :href="entry.path">{{ entry.title }}</a>
-        </v-row>
-        <v-row class="mt-8">{{ entry.description }}</v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div v-if="isIndex" style="width:100%">
+    <BlogItem v-for="entry in entries" :entry="entry" :isMobile="isMobile">
+    </BlogItem>
+  </div>
   <Content v-else class="blog-content mt-8"/>
 </template>
 
 <script>
 import index from '/blog_index.js'
 import { useRoute } from 'vitepress'
+import BlogItem from '../components/BlogItem.vue'
 
 export default {  
+  props: ['isMobile'],
+
+  components: {BlogItem},
+
   setup() {
     const route = useRoute()
 
