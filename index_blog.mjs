@@ -18,4 +18,7 @@ const data = await Promise.all(
   })
 )
 
-await fs.writeFile('docs/blog_index.js', 'export default '+ JSON.stringify(data), 'utf-8')
+var json = {}
+articles.forEach((a, idx) => json[parseInt(a)] = data[idx])
+
+await fs.writeFile('docs/blog_index.js', 'export default '+ JSON.stringify(json), 'utf-8')

@@ -1,9 +1,13 @@
 <template>
   <div v-if="isIndex" style="width:100%">
-    <BlogItem v-for="entry in entries" :entry="entry" :isMobile="isMobile">
+    <BlogItem v-for="(entry, key) in entries" :entry="entry" :isMobile="isMobile">
     </BlogItem>
   </div>
-  <Content v-else class="blog-content mt-8"/>
+  <div v-else class="mt-8">
+    <div class="text-h4">{{ selectedEntry.title }}</div>
+    <div class="text-button font-weight-light">{{ selectedEntry.date }}</div>
+    <Content class="blog-content"/>
+  </div>
 </template>
 
 <script>
@@ -26,17 +30,21 @@ export default {
 
   data() {
     return {
-      entries: []
+      entries: {}
     }
   },
 
   computed: {
     isIndex() {
       return this.route.path.split('/')[2] === undefined
+    },
+
+    selectedEntry() {
+      return this.isIndex ? undefined : this.entries[this.route.path.split('/')[2].split('.')[0]]
     }
   },
 
-  mounted() {
+  created() {
     this.entries = index
   }
 }
@@ -47,12 +55,7 @@ export default {
   visibility: hidden;
 }
 
-.timestamp {
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
 .blog-content p {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 </style>
