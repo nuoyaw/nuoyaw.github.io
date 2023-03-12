@@ -7,11 +7,11 @@
   "author": "Nuoya Wang <u6771430@anu.edu.au>",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.36",
+    "vitepress": "^1.0.0-alpha.51",
     "vue": "^3.2.45"
   },
   "scripts": {
-    "dev": "concurrently \"nodemon --watch docs/blog -e md index_blog.mjs\" \"vitepress dev docs\"",
+    "dev": "concurrently \"nodemon --watch docs/blog/pages -e md index_blog.mjs\" \"vitepress dev docs\"",
     "build": "node index_blog.mjs && vitepress build docs && node resize_viewport.mjs",
     "preview": "vitepress preview docs"
   },

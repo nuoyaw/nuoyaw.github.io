@@ -1,1 +1,0 @@
-export default {"1":{"title":"Welcome to my blog!","date":"11 Feb 2023","description":"My first post ever.","path":"./blog/1.html"}}

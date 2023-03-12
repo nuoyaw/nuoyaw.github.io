@@ -11,7 +11,7 @@
           <div>{{ para }}</div>
         </v-row>
         <v-row justify="center" class="mt-16">
-          <a v-for="link in links" :href="link.url">
+          <a v-for="link in links" :href="link.url" style="text-decoration: none;">
             <v-icon :icon="link.icon" class="profile-link mx-7" :class="themeClass" size="x-large"></v-icon>
           </a>
         </v-row>

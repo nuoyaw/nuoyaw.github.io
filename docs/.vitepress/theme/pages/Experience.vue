@@ -54,7 +54,7 @@ export default {
         'Deep Learning': 'Built and trained NLP models for providing analytics and feedback on student essays, with accuracy meeting or surpassing that of human markers.',
         'Rule-Based NLP': 'Designed and implemented hybrid ML+rule-based grammar error detection and feedback system, with superior performance and usability when compared to a popular open-source alternative.',
         'Data Pipelines': 'Built data pipeline with several novel augmentation techniques to better imitate student writing, allowing for reduced annotation costs for tasks in the low-resource student essay domain.',
-        'Deployment': 'Deployed microservice endpoints on AWS for model inference, which currently serve students across 100+ schools.',
+        'Deployment': 'Deployed microservice endpoints on AWS for model inference, which currently serve students across 500+ schools.',
         'Optimisation': 'Used model optimisation and distillation techniques to improve inference rate per endpoint by over 2000% with negligible reduction in accuracy. Deployed models on specialised instances to reduce endpoint costs by over 60%.'
       },
       anu_entries: {
