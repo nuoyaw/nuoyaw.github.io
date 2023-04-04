@@ -8,7 +8,7 @@ import {execa} from 'execa'
     await execa("yarn", ["build"]);
     // Understand if it's dist or build folder
     const folderName = "docs/.vitepress/dist";
-    await execa("echo", ['"noahs.ai"', ">>", `${folderName}/CNAME`]);
+    await execa("echo", ["noahs.ai"]).pipeStdout(`${folderName}/CNAME`);
     await execa("git", ["--work-tree", folderName, "add", "--all"]);
     await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
     console.log("Pushing to gh-pages...");
