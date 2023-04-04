@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "concurrently \"nodemon --watch docs/blog/pages -e md index_blog.mjs\" \"vitepress dev docs\"",
     "build": "node index_blog.mjs && vitepress build docs && node resize_viewport.mjs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "deploy": "node deploy.mjs"
   },
   "dependencies": {
     "@mdi/font": "^7.1.96",
