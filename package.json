@@ -19,6 +19,7 @@
   "dependencies": {
     "@mdi/font": "^7.1.96",
     "concurrently": "^7.6.0",
+    "execa": "^7.1.1",
     "gray-matter": "^4.0.3",
     "node-fs": "^0.1.7",
     "nodemon": "^2.0.20",
