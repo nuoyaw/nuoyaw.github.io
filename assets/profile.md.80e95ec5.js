@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app.16f3da1b.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"params":{"pkg":"profile"},"relativePath":"profile.md"}'),a={name:"profile.md"};function o(p,s,c,n,i,f){return r(),t("div")}const d=e(a,[["render",o]]);export{l as __pageData,d as default};

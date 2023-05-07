@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.16f3da1b.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"params":{"pkg":"education"},"relativePath":"education.md"}'),o={name:"education.md"};function c(n,r,s,d,i,p){return a(),t("div")}const u=e(o,[["render",c]]);export{m as __pageData,u as default};
